@@ -1,0 +1,10 @@
+# Never commit these — they contain secrets or are machine-specific
+venv/
+config.py
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+
+# The vector database SHOULD be committed (not ignored) — your cloud
+# deployment needs this actual data to answer questions. Do not add
+# chroma_db/ to this file.
