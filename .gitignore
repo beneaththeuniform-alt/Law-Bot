@@ -3,6 +3,7 @@ venv/
 config.py
 __pycache__/
 *.pyc
+*.pdf
 .streamlit/secrets.toml
 
 # The vector database SHOULD be committed (not ignored) — your cloud
