@@ -36,7 +36,7 @@ from ask_law_bot import (
     ask_llm,
 )
 
-st.set_page_config(page_title="Nyaya Sahayak — Indian Law Bot", page_icon="⚖️", layout="centered")
+st.set_page_config(page_title="Act Wise — Indian Law Bot", page_icon="⚖️", layout="centered")
 
 # ---------------------------------------------------------------------------
 # Visual design: a "gazette masthead" identity — dark navy header with serif
@@ -129,7 +129,7 @@ collection = load_collection()
 
 st.markdown("""
 <div class="masthead">
-    <h1>Nyaya Sahayak</h1>
+    <h1>Act Wise</h1>
     <p>Ask in plain language. Answers are grounded in Indian statutes, with citations — this is legal information, not legal advice.</p>
 </div>
 """, unsafe_allow_html=True)
