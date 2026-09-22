@@ -227,7 +227,8 @@ st.markdown(f"""
     {logo_html}
     <div>
         <h1>Act Wise</h1>
-        <p>Ask in plain language. Answers are grounded in Indian statutes, with citations — this is legal information, not legal advice.</p>
+        <p>Ask in plain language. Answers are grounded in Indian statutes, with citations.</p>
+        <p>This is legal information, not legal advice.</p>
     </div>
 </div>
 """, unsafe_allow_html=True)
