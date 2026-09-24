@@ -142,8 +142,19 @@ def ask_openai_compatible(messages: list) -> str:
     payload = {
         "model": config.LLM_MODEL_NAME,
         "messages": [{"role": "system", "content": SYSTEM_PROMPT}] + messages,
-        "max_tokens": 2048,
+        "max_tokens": 4096,
     }
+
+    # Optional: some "thinking" models (like Gemini 3.x) spend part of
+    # max_tokens on internal reasoning before writing the visible answer,
+    # which can cause cut-off responses on a long structured format like
+    # ours. Setting LLM_REASONING_EFFORT in config.py (e.g. "low") tells
+    # the model to spend less on that, leaving more room for the actual
+    # answer. Only sent if you've set it — harmless to leave unset for
+    # providers that don't support this parameter.
+    reasoning_effort = getattr(config, "LLM_REASONING_EFFORT", None)
+    if reasoning_effort:
+        payload["reasoning_effort"] = reasoning_effort
 
     response = requests.post(url, headers=headers, json=payload, timeout=60)
     if not response.ok:

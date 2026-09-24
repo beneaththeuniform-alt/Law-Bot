@@ -31,6 +31,11 @@ LLM_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
 LLM_API_KEY = "placeholder-set-your-real-key-in-local_secrets.py"
 LLM_MODEL_NAME = "gemini-3.6-flash"
 
+# Optional — see ask_law_bot.py for what this does. "low" is a good
+# starting point for Gemini's thinking models; set to None (or delete
+# this line) to go back to the model's own default reasoning behavior.
+LLM_REASONING_EFFORT = "low"
+
 # --- Settings used when LLM_PROVIDER = "anthropic" ---
 ANTHROPIC_API_KEY = "placeholder-set-your-real-key-in-local_secrets.py"
 ANTHROPIC_MODEL_NAME = "claude-haiku-4-5-20251001"
